@@ -1,0 +1,57 @@
+% プログラミング言語の名前を表示するためのコマンド
+% language_icons.sty
+% https://github.com/nard-tech/nard-tex-programming-package
+
+% HTML
+\newcommand{\PrLangHtml}{\PrLangCommand{0.82, 0.88, 1}{HTML}}
+% HTML 5
+\newcommand{\PrLangHtmlFive}{\PrLangCommand{0.82, 0.88, 1}{HTML 5}}
+% CSS
+\newcommand{\PrLangCss}{\PrLangCommand{1, 0.82, 1}{CSS}}
+% JavaScript
+\newcommand{\PrLangJavaScript}{\PrLangCommand{1, 0.87, 0.6}{JavaScript}}
+% jQuery
+\newcommand{\PrLangJQuery}{\PrLangCommand{0.97, 0.93, 0.74}{jQuery}}
+% CSV
+\newcommand{\PrLangCsv}{\PrLangCommand{0.78, 0.93, 0.67}{CSV}}
+% PHP
+\newcommand{\PrLangPhp}{\PrLangCommand{0.71, 1, 0.89}{PHP}}
+% C
+\newcommand{\PrLangC}{\PrLangCommand{1, 0.82, 1}{C}}
+% C++
+\newcommand{\PrLangCPlPl}{\PrLangCommand{1, 0.82, 1}{C++}}
+% Objective-C
+\newcommand{\PrLangObjectiveC}{\PrLangCommand{0.9, 0.9, 0.85}{Objective-C}}
+% Java
+\newcommand{\PrLangJava}{\PrLangCommand{1, 0.82, 0.82}{Java}}
+% Perl
+\newcommand{\PrLangPerl}{\PrLangCommand{0.85, 0.9, 1}{Perl}}
+% Python
+\newcommand{\PrLangPython}{\PrLangCommand{0.71, 1, 0.89}{Python}}
+% Ruby
+\newcommand{\PrLangRuby}{\PrLangCommand{1, 0.82, 1}{Ruby}}
+% Ruby on Rails
+\newcommand{\PrLangRubyOnRails}{\PrLangCommand{1, 0.82, 1}{{\tiny Ruby on} Rails}}
+% R
+\newcommand{\PrLangR}{\PrLangCommand{0.89, 0.88, 0.91}{R}}
+% Scala
+\newcommand{\PrLangScala}{\PrLangCommand{0.85, 0.9, 1}{Scala}}
+% AWK
+\newcommand{\PrLangAwk}{\PrLangCommand{0.85, 0.96, 0.88}{AWK}}
+% Processing
+\newcommand{\PrLangProcessing}{\PrLangCommand{0.91, 0.85, 0.94}{Processing}}
+% Pascal
+\newcommand{\PrLangPascal}{\PrLangCommand{0.85, 0.92, 0.94}{Pascal}}
+% Haskell
+\newcommand{\PrLangHaskell}{\PrLangCommand{0.9, 0.85, 0.85}{Haskell}}
+% Lisp
+\newcommand{\PrLangLisp}{\PrLangCommand{0.95, 0.9, 0.9}{Lisp}}
+% TeX
+\newcommand{\PrLangTeX}{\PrLangCommand{0.9, 0.9, 1}{\TeX}}
+% LaTeX
+\newcommand{\PrLangLaTeX}{\PrLangCommand{0.9, 0.9, 1}{\LaTeX}}
+
+% -------- private commands
+\newcommand{\PrLangCommand}[2]{
+  \colorbox[rgb]{#1}{\,\,\textsf{#2}\,\,}
+}
