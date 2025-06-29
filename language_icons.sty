@@ -55,3 +55,56 @@
 \newcommand{\PrLangCommand}[2]{
   \colorbox[rgb]{#1}{\,\,\textsf{#2}\,\,}
 }
+
+% % ---- \ovalframe{幅}{高さ}{半径}{線幅}{線色}{背景色}{テキスト}
+% % cf. http://www.dab.hi-ho.ne.jp/t-wata/tex/postscript.html
+% \makeatletter
+% \newif\ifdvips\dvipstrue
+% \ifdvips\special{header=savematrix.pro}\fi
+% \catcode`@=11
+% \long\def\ovalframe#1#2#3#4#5#6#7{%
+%   \edef\width{#1}%
+%   \edef\height{#2}%
+%   \edef\radius{#3}%
+%   \edef\widthofline{#4}% # 4 は linewidth としてはいけない
+%   \edef\colorofline{#5}%
+%   \edef\bg{#6}%
+
+%   % widthofline が空の場合，widthofline は 0zw とし，colorofline は空とする．
+%   \ifx
+%     \widthofline\empty\def\widthofline{0pt}\def\colorofline{}
+%   \fi
+%   % colorofline が空の場合，widthofline は 0zw とする．
+%   \ifx
+%     \colorofline\empty\def\widthofline{0pt}
+%   \fi
+%   % widthofline から，x, y, rd, l を設定する．
+%   \dimen@=\width\advance\dimen@-\widthofline\advance\dimen@-\radius
+%     \divide\dimen@ 1024\edef\x{\number\dimen@\space}%
+%   \dimen@=\height\advance\dimen@-\widthofline\advance\dimen@-\radius
+%     \divide\dimen@ 1024\edef\y{\number\dimen@\space}%
+%   \dimen@=\radius\divide\dimen@ 1024\edef\r{\number\dimen@\space}%
+%   \dimen@=\widthofline\divide\dimen@ 2048\edef\l{\number\dimen@\space}%
+%   \ifdvips\edef\sp{origmatrix setmatrix }\else\edef\sp{}\fi
+%   \edef\sp{
+%     gsave \sp currentpoint translate^^0a
+%     72 72.27 64 mul div 72 72.27 64 mul div scale^^0a
+%     \l \l translate newpath^^0a
+%     \x \y \r 0 90 arc \r \y \r 90 180 arc^^0a
+%     \r \r \r 180 270 arc \x \r \r 270 360 arc^^0a
+%     closepath^^0a
+%   }%
+%   \ifx\bg\empty\else
+%     \edef\sp{\sp gsave \bg\space setgray fill grestore }\fi
+%     \dimen@=\widthofline\divide\dimen@ 1024\edef\l{\number\dimen@\space}%
+%   \ifx\colorofline\empty\else
+%     \edef\sp{\sp\colorofline\space setgray \l setlinewidth stroke }
+%   \fi
+%   \edef\sp{\sp grestore}\setbox0\hbox{#7}%
+%   \dimen@=\height\advance\dimen@-\ht0\advance\dimen@-\dp0%
+%   \divide\dimen@ 2\advance\dimen@\dp0\dp0=\dimen@\dimen@=\height
+%   \advance\dimen@-\dp0\ht0=\dimen@
+%   \hbox to\width{\raise-\dp0\hbox{\special{ps: \sp}}\hss\box0\hss}%
+% }
+% \catcode`@=12
+% \makeatother
